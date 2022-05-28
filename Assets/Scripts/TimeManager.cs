@@ -12,13 +12,14 @@ public class TimeManager : MonoBehaviour
     public int dayTick;
 
     public TextMeshProUGUI dayTickText;
-
+    public TextMeshProUGUI dayNumberText;
     public TextMeshProUGUI dayOrNightText;
 
     // Start is called before the first frame update
     void Start()
     {
         dayTick = 0;
+        day = 0;
         dayOrNightText.text = "Daytime";
     }
 
@@ -33,6 +34,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         dayTickText.text = "Tick: " + dayTick.ToString();
+        dayNumberText.text = "Day: " + day.ToString();
     }
 
     // trigger evening?
@@ -42,6 +44,22 @@ public class TimeManager : MonoBehaviour
         {
             StartEvening();
         }
+        if (dayTick == 6 && day == 15)
+        {
+            Day15();
+        }
+
+        if (dayTick == 6 && day != 15)
+        {
+            StartNewDay();
+        }
+    }
+
+    void StartNewDay()
+    {
+        day++;
+        dayTick = 0;
+        dayOrNightText.text = "Daytime";
     }
 
     public void StartEvening()
@@ -49,8 +67,8 @@ public class TimeManager : MonoBehaviour
         dayOrNightText.text = "Nighttime";
     }
 
-    public void StartNewDay()
+    public void Day15()
     {
-        dayTick = 0;
+        
     }
 }
