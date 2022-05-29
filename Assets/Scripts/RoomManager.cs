@@ -81,4 +81,21 @@ public class RoomManager : MonoBehaviour
         Invoke("RemoveAllEventsOccuringText", 2f);
 
     }
+
+    public void Salvatore()
+    {
+        SceneManager.LoadScene("SalvatoreFirst");
+    }
+
+    public void Wojciech()
+    {
+        SceneManager.LoadScene("WojciechFirst");
+
+    }
+
+    public void Andy()
+    {
+        SceneManager.LoadScene("AndyFirst");
+
+    }
 }

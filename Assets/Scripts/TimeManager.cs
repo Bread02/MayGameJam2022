@@ -11,6 +11,8 @@ public class TimeManager : MonoBehaviour
     public int day;
     public int dayTick;
 
+    public GameObject startMatchingScreen;
+
     public TextMeshProUGUI dayTickText;
     public TextMeshProUGUI dayNumberText;
     public TextMeshProUGUI dayOrNightText;
@@ -21,6 +23,7 @@ public class TimeManager : MonoBehaviour
         dayTick = 0;
         day = 0;
         dayOrNightText.text = "Daytime";
+        startMatchingScreen.SetActive(false);
     }
 
     public void IncrementDayTick()
@@ -40,9 +43,21 @@ public class TimeManager : MonoBehaviour
     // trigger evening?
     void IfDayTickIsFive()
     {
+        if (dayTick == 1)
+        {
+            dayOrNightText.text = "Morning";
+        }
+        if (dayTick == 3)
+        {
+            dayOrNightText.text = "Afternoon";
+        }
+        if (dayTick == 4)
+        {
+            dayOrNightText.text = "Evening";
+        }
         if (dayTick == 5)
         {
-            StartEvening();
+            StartNight();
         }
         if (dayTick == 6 && day == 15)
         {
@@ -59,16 +74,29 @@ public class TimeManager : MonoBehaviour
     {
         day++;
         dayTick = 0;
-        dayOrNightText.text = "Daytime";
+        dayOrNightText.text = "Morning";
     }
 
-    public void StartEvening()
+    public void StartNight()
     {
         dayOrNightText.text = "Nighttime";
+        StartDating();
+    }
+
+    public void StartDating()
+    {
+        startMatchingScreen.SetActive(true);
+    }
+
+    public void GoToSleepInsteadOfDating()
+    {
+        startMatchingScreen.SetActive(false);
     }
 
     public void Day15()
     {
         
     }
+
+  
 }
