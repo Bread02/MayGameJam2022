@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverScenes/PhysicalHealthGameOver.unity
     guid: b791dd2d35d9db44cb1927b2ee687342
+  - enabled: 1
+    path: Assets/Scenes/MatchingScenes/WojciechFirst.unity
+    guid: 7f0c2bf34bead564e999dbd9bc36789c
+  - enabled: 1
+    path: Assets/Scenes/MatchingScenes/SalvatoreFirst.unity
+    guid: bc671c50b7e415449b93df7aa33f52d2
+  - enabled: 1
+    path: Assets/Scenes/MatchingScenes/MatchingScene.unity
+    guid: d40386377fe45bf48864952b247a0471
+  - enabled: 1
+    path: Assets/Scenes/MatchingScenes/AndyFirst.unity
+    guid: c428dcedf1f0d2d429806d3fd3a71483
   m_configObjects: {}

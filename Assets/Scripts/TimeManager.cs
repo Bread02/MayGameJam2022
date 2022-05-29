@@ -91,6 +91,7 @@ public class TimeManager : MonoBehaviour
     public void GoToSleepInsteadOfDating()
     {
         startMatchingScreen.SetActive(false);
+        StartNewDay();
     }
 
     public void Day15()

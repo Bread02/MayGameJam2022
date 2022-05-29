@@ -14,13 +14,19 @@ public class WojciechFirstManager : MonoBehaviour
     public GameObject sorryIfISayWeirdThings;
     public GameObject uhhhToLazyToType;
     public GameObject iGuess;
+    public GameObject iGuess2;
     public GameObject notInLectureMood;
     public GameObject doYouLikeAnime;
     public GameObject grabCoffee;
     public GameObject typingIconForever;
     public GameObject uhhhthanks;
     public GameObject thatmakesmefeelabit;
+    public GameObject okcya;
+    public GameObject wowreallycantwait;
+
     public GameObject unmatch;
+
+
 
 
 
@@ -44,7 +50,7 @@ public class WojciechFirstManager : MonoBehaviour
         uhhhthanks.SetActive(false);
         thatmakesmefeelabit.SetActive(false);
         unmatch.SetActive(false);
-
+        iGuess2.SetActive(false);
 
     }
 
@@ -75,11 +81,12 @@ public class WojciechFirstManager : MonoBehaviour
     public void ThanksIGuess()
     {
         SetAllInactive();
-
+        sorryIfISayWeirdThings.SetActive(!false);
     }
     public void Dontworryaboutit()
     {
         SetAllInactive();
+        doYouLikeAnime?.SetActive(!false);
 
     }
     public void NoWonderLMAO()
@@ -92,32 +99,37 @@ public class WojciechFirstManager : MonoBehaviour
     {
         SetAllInactive();
         Unmatch();
-
-
+    }
+    public void Doesntsoundlikeyourinmood()
+    {
+        SetAllInactive();
+        notInLectureMood.SetActive(true);
+        Invoke("Unmatch", 3f);
     }
 
     public void ArentWeAll()
     {
         SetAllInactive();
-
+        iGuess.SetActive(true);
     }
 
     public void IDontHaveAllDay()
     {
         SetAllInactive();
+        Unmatch();
 
     }
 
     public void YouDontHaveToDoWhittyLines()
     {
         SetAllInactive();
-
+        uhhhthanks.SetActive(true);
     }
 
     public void WeWouldntBeHereIfIWasntInterested()
     {
         SetAllInactive();
-
+        thatmakesmefeelabit.SetActive(true);
     }
 
     public void JesusCanWeJusthave()
@@ -126,16 +138,37 @@ public class WojciechFirstManager : MonoBehaviour
         Unmatch();
 
     }
+
+    public void wecanchatwhenyoufeelbetter()
+    {
+        SetAllInactive();
+        Invoke("Room", 3f);
+    }
+
+    public void feelingdowntoday()
+    {
+        SetAllInactive();
+        iGuess2.SetActive(true);
+    }
+
+    public void canchatwhenfeelilngbetter()
+    {
+        SetAllInactive();
+        Invoke("Room", 3f);
+    }
     public void GotToGoNow()
     {
         SetAllInactive();
+        okcya.SetActive(true);
+        Invoke("Room", 3f);
 
     }
 
     public void WeCouldChatMoreOverA()
     {
         SetAllInactive();
-
+        wowreallycantwait.SetActive(true);
+        Invoke("Room", 3f);
     }
 
     public void Unmatch()
