@@ -8,8 +8,8 @@ public class TimeManager : MonoBehaviour
 {
     public StatusManager statusManager;
 
-    public int day;
-    public int dayTick;
+    public static int day = 0;
+    public static int dayTick = 0;
 
     public GameObject startMatchingScreen;
 
@@ -20,8 +20,8 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dayTick = 0;
-        day = 0;
+    //    dayTick = 0;
+   //     day = 0;
         dayOrNightText.text = "Daytime";
         startMatchingScreen.SetActive(false);
     }
