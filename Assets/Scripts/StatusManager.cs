@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class StatusManager : MonoBehaviour
 {
     [Header("Status Floats")]
-    public float sanity;
-    public float physicalHealth;
+    public static float sanity = 100;
+    public static float physicalHealth = 100;
 
     [Header("Status Bar Images")]
     public Image sanityImage;
