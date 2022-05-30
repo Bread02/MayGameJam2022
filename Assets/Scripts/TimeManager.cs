@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TimeManager : MonoBehaviour
    //     day = 0;
         dayOrNightText.text = "Daytime";
         startMatchingScreen.SetActive(false);
+        dayTick++;
+        IfDayTickIsFive();
     }
 
     public void IncrementDayTick()
@@ -96,7 +99,7 @@ public class TimeManager : MonoBehaviour
 
     public void Day15()
     {
-        
+        SceneManager.LoadScene("HeartBroken");
     }
 
   

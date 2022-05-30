@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MatchingScenes/AndyFirst.unity
     guid: c428dcedf1f0d2d429806d3fd3a71483
+  - enabled: 1
+    path: Assets/Scenes/HeartBroken.unity
+    guid: e71ee943e95c0a944a3f2eba23205b4c
   m_configObjects: {}

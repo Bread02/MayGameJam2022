@@ -21,7 +21,6 @@ public class AndyFirstManager : MonoBehaviour
     public GameObject ironAndCuteness;
 
     public GameObject obi;
-    public GameObject general;
     public GameObject theNewMovieIsComing;
 
     public GameObject unmatch;
@@ -52,7 +51,6 @@ public class AndyFirstManager : MonoBehaviour
         winkEmoji.SetActive(false);
         ironAndCuteness.SetActive(false);
         obi.SetActive(false);
-        general.SetActive(false);
         theNewMovieIsComing.SetActive(false);
         unmatch.SetActive(false);
         dateOption.SetActive(false);
@@ -88,6 +86,7 @@ public class AndyFirstManager : MonoBehaviour
     {
         SetAllInactive();
         coolSoundsTasty.SetActive(true);
+        Invoke("ChatLater", 2f);
     }
 
     public void yeah()
@@ -112,7 +111,7 @@ public class AndyFirstManager : MonoBehaviour
     public void thanksbutidliketoknowyoubetter()
     {
         SetAllInactive();
-        chatLaterInWeek.SetActive(true);
+        ChatLater();
     }
 
     public void wowthanks()
