@@ -35,16 +35,28 @@ public class AndyFirstManager : MonoBehaviour
     {
         SetAllInactive();
         hey.SetActive(true);
-
     }
 
 
     public void SetAllInactive()
     {
-        SetAllInactive();
-
         hey.SetActive(false);
         whatYouHaveForLunch.SetActive(false);
+        emojiFire.SetActive(false);
+        niceAnyAlmonds.SetActive(false);
+        coolSoundsTasty.SetActive(false);
+        canGetYouAlmonds.SetActive(false);
+        seeYouNearDescos.SetActive(false);
+        okSadFace.SetActive(false);
+        circleHandEmoji.SetActive(false);
+        winkEmoji.SetActive(false);
+        ironAndCuteness.SetActive(false);
+        obi.SetActive(false);
+        general.SetActive(false);
+        theNewMovieIsComing.SetActive(false);
+        unmatch.SetActive(false);
+        dateOption.SetActive(false);
+        chatLaterInWeek.SetActive(false);
     }
 
     public void HelloThere()
@@ -125,6 +137,17 @@ public class AndyFirstManager : MonoBehaviour
     public void SureThingReallyApprechiate()
     {
         Date();
+    }
+
+    public void QuestionMarks()
+    {
+        Unmatch();
+    }
+
+    public void General()
+    {
+        SetAllInactive();
+        theNewMovieIsComing.SetActive(true);
     }
 
 
