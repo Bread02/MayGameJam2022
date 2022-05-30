@@ -26,6 +26,9 @@ public class AndyFirstManager : MonoBehaviour
 
     public GameObject unmatch;
 
+    public GameObject dateOption;
+    public GameObject chatLaterInWeek;
+
 
     // Start is called before the first frame update
     void Start()
@@ -91,17 +94,19 @@ public class AndyFirstManager : MonoBehaviour
     {
         SetAllInactive();
         ironAndCuteness.SetActive(true);
+        Invoke("Date", 3f);
     }
 
     public void thanksbutidliketoknowyoubetter()
     {
         SetAllInactive();
-
+        chatLaterInWeek.SetActive(true);
     }
 
     public void wowthanks()
     {
         SetAllInactive();
+        dateOption.SetActive(true);
     }
 
     public void yumFace()
@@ -117,11 +122,37 @@ public class AndyFirstManager : MonoBehaviour
         Invoke("Unmatch", 3f);
     }
 
+    public void SureThingReallyApprechiate()
+    {
+        Date();
+    }
+
+
+    public void DontWorryIllGetThem()
+    {
+        ChatLater();
+    }
+
     public void Unmatch()
     {
         SetAllInactive();
         unmatch.SetActive(true);
         Invoke("Room", 3f);
+    }
+
+
+    public void Date()
+    {
+
+        dateOption.SetActive(true);
+        Invoke("Room", 3f);
+    }
+
+    public void ChatLater()
+    {
+        chatLaterInWeek.SetActive(true);
+        Invoke("Room", 3f);
+
     }
 
     public void Room()

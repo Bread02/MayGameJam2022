@@ -36,6 +36,8 @@ public class SalvatoreFirst : MonoBehaviour
         youSoundFun.SetActive(false);
         prettyGoodGtg.SetActive(false);
         heyHeyHey.SetActive(false);
+        dateOption.SetActive(false);
+        chatLaterInWeek.SetActive(false);
     }
 
     public void Hello()

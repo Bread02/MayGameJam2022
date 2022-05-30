@@ -26,7 +26,8 @@ public class WojciechFirstManager : MonoBehaviour
 
     public GameObject unmatch;
 
-
+    public GameObject dateOption;
+    public GameObject chatLaterInWeek;
 
 
 
@@ -142,13 +143,14 @@ public class WojciechFirstManager : MonoBehaviour
     public void wecanchatwhenyoufeelbetter()
     {
         SetAllInactive();
-        Invoke("Room", 3f);
+        ChatAgainLater();
     }
 
     public void feelingdowntoday()
     {
         SetAllInactive();
         iGuess2.SetActive(true);
+        Invoke("ChatAgainLater", 3f);
     }
 
     public void canchatwhenfeelilngbetter()
@@ -168,7 +170,25 @@ public class WojciechFirstManager : MonoBehaviour
     {
         SetAllInactive();
         wowreallycantwait.SetActive(true);
+        Date();
+    }
+
+    
+
+
+    public void ChatAgainLater()
+    {
         Invoke("Room", 3f);
+        chatLaterInWeek.SetActive(true);
+    }
+
+
+
+    public void Date()
+    {
+        dateOption.SetActive(true);
+        Invoke("Room", 3f);
+
     }
 
     public void Unmatch()
