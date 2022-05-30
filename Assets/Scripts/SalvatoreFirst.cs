@@ -56,6 +56,7 @@ public class SalvatoreFirst : MonoBehaviour
     {
         SetAllInactive();
         nah.SetActive(true);
+        Invoke("Unmatch", 2f);
     }
 
     public void HappyFace()
