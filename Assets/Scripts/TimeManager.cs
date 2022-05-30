@@ -18,6 +18,12 @@ public class TimeManager : MonoBehaviour
     public TextMeshProUGUI dayNumberText;
     public TextMeshProUGUI dayOrNightText;
 
+    public GameObject background1;
+    public GameObject background2;
+    public GameObject background3;
+    public GameObject background4;
+    public GameObject background5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +33,15 @@ public class TimeManager : MonoBehaviour
         startMatchingScreen.SetActive(false);
         dayTick++;
         IfDayTickIsFive();
+    }
+
+    public void SetAllBackGroundsInactive()
+    {
+        background1.SetActive(false);
+        background2.SetActive(false);
+        background3.SetActive(false);
+        background4.SetActive(false);
+        background5.SetActive(false);
     }
 
     public void IncrementDayTick()
@@ -49,20 +64,37 @@ public class TimeManager : MonoBehaviour
         if (dayTick == 1)
         {
             dayOrNightText.text = "Morning";
+            SetAllBackGroundsInactive();
+            background1.SetActive(true);
         }
+        if (dayTick == 2)
+        {
+            SetAllBackGroundsInactive();
+            background2.SetActive(true);
+        }
+
         if (dayTick == 3)
         {
+            SetAllBackGroundsInactive();
+            background3.SetActive(true);
+
             dayOrNightText.text = "Afternoon";
         }
         if (dayTick == 4)
         {
+            SetAllBackGroundsInactive();
+            background4.SetActive(true);
+
             dayOrNightText.text = "Evening";
         }
         if (dayTick == 5)
         {
+            SetAllBackGroundsInactive();
+            background5.SetActive(true);
+
             StartNight();
         }
-        if (dayTick == 6 && day == 15)
+        if (dayTick == 1 && day == 15)
         {
             Day15();
         }
@@ -75,8 +107,15 @@ public class TimeManager : MonoBehaviour
 
     void StartNewDay()
     {
+        if(day == 10)
+        {
+            Day15();
+        }
         day++;
-        dayTick = 0;
+        dayTick = 1;
+        SetAllBackGroundsInactive();
+        background1.SetActive(true);
+
         dayOrNightText.text = "Morning";
     }
 
