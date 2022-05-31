@@ -12,6 +12,9 @@ public class TimeManager : MonoBehaviour
     public static int day = 0;
     public static int dayTick = 0;
 
+
+    public RoomManager roomManager;
+
     public GameObject startMatchingScreen;
 
     public TextMeshProUGUI dayTickText;
@@ -134,6 +137,9 @@ public class TimeManager : MonoBehaviour
     {
         startMatchingScreen.SetActive(false);
         StartNewDay();
+        roomManager.andy.SetActive(true);
+        roomManager.salvatore.SetActive(false);
+        roomManager.wojciech.SetActive(false);
     }
 
     public void Day15()

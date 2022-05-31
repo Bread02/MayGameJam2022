@@ -18,10 +18,18 @@ public class RoomManager : MonoBehaviour
     public GameObject surfedTheWebText;
     public GameObject wentForAWalkText;
 
+    [Header("Matching Screens")]
+    public GameObject andy;
+    public GameObject salvatore;
+    public GameObject wojciech;
+
     // Start is called before the first frame update
     void Start()
     {
         RemoveAllEventsOccuringText();
+        andy.SetActive(true);
+        salvatore.SetActive(false);
+        wojciech.SetActive(false);
     }
 
     public void RemoveAllEventsOccuringText()
@@ -47,7 +55,9 @@ public class RoomManager : MonoBehaviour
         statusManager.Sleep();
         sleptText.SetActive(true);
         timeManager.IncrementDayTick();
-
+        andy.SetActive(true);
+        wojciech.SetActive(false);
+        salvatore.SetActive(false);
         Invoke("RemoveAllEventsOccuringText", 2f);
 
     }
@@ -90,12 +100,37 @@ public class RoomManager : MonoBehaviour
     public void Wojciech()
     {
         SceneManager.LoadScene("WojciechFirst");
-
     }
 
     public void Andy()
     {
-        SceneManager.LoadScene("AndyFirst");
+        if (ConversationTracker.andyOne == true)
+        {
+            SceneManager.LoadScene("AndyFirst");
+        }
+        if(ConversationTracker.andyTwo == true)
+        {
+            SceneManager.LoadScene("AndyTwo");
+        }
+        if (ConversationTracker.andyThree == true)
+        {
+            SceneManager.LoadScene("AndyTwo");
+
+        }
 
     }
+
+    public void AndyNo()
+    {
+        andy.SetActive(false);
+        wojciech.SetActive(true);
+    }
+
+    public void WojciechNo()
+    {
+        wojciech.SetActive(false);
+        salvatore.SetActive(true);
+    }
+
+
 }

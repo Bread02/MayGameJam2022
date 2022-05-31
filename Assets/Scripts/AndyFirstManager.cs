@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AndyFirstManager : MonoBehaviour
+public class AndyFirstManager : DatingMaster
 {
 
     public GameObject hey;
@@ -23,12 +23,6 @@ public class AndyFirstManager : MonoBehaviour
     public GameObject obi;
     public GameObject theNewMovieIsComing;
 
-    public GameObject unmatch;
-
-    public GameObject dateOption;
-    public GameObject chatLaterInWeek;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +31,7 @@ public class AndyFirstManager : MonoBehaviour
     }
 
 
-    public void SetAllInactive()
+    public override void SetAllInactive()
     {
         hey.SetActive(false);
         whatYouHaveForLunch.SetActive(false);
@@ -112,12 +106,15 @@ public class AndyFirstManager : MonoBehaviour
     {
         SetAllInactive();
         ChatLater();
+        ConversationTracker.andyOne = false;
+        ConversationTracker.andyTwo = true;
     }
 
     public void wowthanks()
     {
         SetAllInactive();
         dateOption.SetActive(true);
+        Date();
     }
 
     public void yumFace()
@@ -153,32 +150,8 @@ public class AndyFirstManager : MonoBehaviour
     public void DontWorryIllGetThem()
     {
         ChatLater();
+        ConversationTracker.andyOne = false;
+        ConversationTracker.andyThree = true;
     }
 
-    public void Unmatch()
-    {
-        SetAllInactive();
-        unmatch.SetActive(true);
-        Invoke("Room", 3f);
-    }
-
-
-    public void Date()
-    {
-
-        dateOption.SetActive(true);
-        Invoke("Room", 3f);
-    }
-
-    public void ChatLater()
-    {
-        chatLaterInWeek.SetActive(true);
-        Invoke("Room", 3f);
-
-    }
-
-    public void Room()
-    {
-        SceneManager.LoadScene("Room");
-    }
 }

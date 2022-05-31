@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class SalvatoreFirst : MonoBehaviour
+public class SalvatoreFirst : DatingMaster
 {
 
     public GameObject heyBabe;
@@ -15,10 +15,6 @@ public class SalvatoreFirst : MonoBehaviour
     public GameObject youSoundFun;
     public GameObject prettyGoodGtg;
     public GameObject nah;
-    public GameObject unmatch;
-
-    public GameObject dateOption;
-    public GameObject chatLaterInWeek;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +24,7 @@ public class SalvatoreFirst : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void SetAllInactive()
+    public override void SetAllInactive()
     {
         heyBabe.SetActive(false);
         lowEnthusiasm.SetActive(false);
@@ -68,7 +64,7 @@ public class SalvatoreFirst : MonoBehaviour
     public void yeeSureThing()
     {
         SetAllInactive();
-        DateOption();
+        Date();
     }
 
     public void IdLikeToKnowYouFirst()
@@ -101,29 +97,5 @@ public class SalvatoreFirst : MonoBehaviour
         SetAllInactive();
         prettyGoodGtg.SetActive(true);
         Invoke("ChatToYouAgainLater", 3f);
-    }
-
-    public void Unmatch()
-    {
-        SetAllInactive();
-        unmatch.SetActive(true);
-        Invoke("Room", 3f);
-    }
-
-    public void DateOption()
-    {
-        dateOption.SetActive(true);
-        Invoke("Room", 3f);
-    }
-
-    public void ChatToYouAgainLater()
-    {
-        chatLaterInWeek.SetActive(true);
-        Invoke("Room", 3f);
-    }
-
-    public void Room()
-    {
-        SceneManager.LoadScene("Room");
     }
 }

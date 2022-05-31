@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MatchingScenes/Andy2.unity
     guid: 3ce6a389234ffc04fae7cb6966df37d7
+  - enabled: 1
+    path: Assets/Scenes/MatchingScenes/Andy3.unity
+    guid: aaad6a4154dcf24469ecc17b30eab7e0
   m_configObjects: {}

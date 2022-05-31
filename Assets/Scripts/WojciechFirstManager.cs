@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WojciechFirstManager : MonoBehaviour
+public class WojciechFirstManager : DatingMaster
 {
     [Header("SubCanvases")]
 
@@ -24,12 +24,6 @@ public class WojciechFirstManager : MonoBehaviour
     public GameObject okcya;
     public GameObject wowreallycantwait;
 
-    public GameObject unmatch;
-
-    public GameObject dateOption;
-    public GameObject chatLaterInWeek;
-
-
 
     public void Start()
     {
@@ -37,7 +31,7 @@ public class WojciechFirstManager : MonoBehaviour
         hey.SetActive(true);
     }
 
-    public void SetAllInactive()
+    public override void SetAllInactive()
     {
         hey.SetActive(false);
         youLookKindaCute.SetActive(false);
@@ -182,26 +176,6 @@ public class WojciechFirstManager : MonoBehaviour
         chatLaterInWeek.SetActive(true);
     }
 
-
-
-    public void Date()
-    {
-        dateOption.SetActive(true);
-        Invoke("Room", 3f);
-
-    }
-
-    public void Unmatch()
-    {
-        SetAllInactive();
-        unmatch.SetActive(true);
-        Invoke("Room", 3f);
-    }
-
-    public void Room()
-    {
-        SceneManager.LoadScene("Room");
-    }
     #endregion
 
 }
